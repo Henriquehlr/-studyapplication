@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% dados.forEach(function(lista){%>
+        <li> <%= lista.nome %> </li>
+      <%}) %>
+    </ul>
+   
+  </body>
+</html>
