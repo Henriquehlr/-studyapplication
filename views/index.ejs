@@ -8,9 +8,13 @@
     <h1><%= title %></h1>
     <ul>
       <% dados.forEach(function(lista){%>
-        <li> <%= lista.nome %> </li>
+        <li> 
+          <a href="/edit/<%= lista._id %> ">
+            <%= lista.nome %> 
+          </a>
+        </li>
       <%}) %>
     </ul>
-   
+   <a href="/new">Cadastrar Nova Empresa</a>
   </body>
 </html>

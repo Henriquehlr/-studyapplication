@@ -6,6 +6,13 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <form action="<%= action %>" method="POST">
+      <label>Nome Empresa:</label>
+        <input type="text" name="nome" value="<%= dados.nome %>" />
+      <label>Número</label>
+        <input type="number" name="numero" value="<%= dados.numero %>" />
+      <button type="submit" value="Salvar">Salvar</button>
+      <button type="submit" value="deletee">Deletar</button>
+    </form>
   </body>
 </html>
