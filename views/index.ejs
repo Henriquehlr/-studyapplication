@@ -1,20 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <ul>
-      <% dados.forEach(function(lista){%>
-        <li> 
-          <a href="/edit/<%= lista._id %> ">
-            <%= lista.nome %> 
-          </a>
-        </li>
-      <%}) %>
-    </ul>
-   <a href="/new">Cadastrar Nova Empresa</a>
-  </body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include(nav) %>
+
+
+    <div class="container">
+
+      <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+
+              <h2>
+                  <%= title %>
+              </h2>
+          </div>
+      </div>
+      <div class="row justify-content-md-center">
+          <div class="col-md-12">
+            <ul>
+              <% dados.forEach(function(lista){%>
+                  <li>
+                      
+                          <div class="table table-dark" role="table">
+                              <b>Nome: </b><%= lista.descricao %> <br/>
+                              <b>Código Barras: </b><%= lista.volume %><br/>
+                              <b>Valor: </b><%= lista.preco %><br/>
+                              <b>Número: </b><%= lista.id %><br/>
+                              <b>Quantidade: </b><%= lista.quantidade %><br/>
+
+                              <a href="/edit/<%= lista._id %>"><button class="btn btn-primary" type="submit" value="Salvar">Alterar</button></a>
+                              <a href="/delete/<%= lista._id %>"><button class="btn btn-danger" type="submit" value="Salvar">Excluir</button></a>
+                          </div>
+                      
+                  </li>
+                  <%}) %>
+          </ul>
+  
+          </div>
+          <div class="center">
+              <h2>Painel de Controle</h2>
+            <a href="/new">
+              <button class="btn btn-secondary btn-lg" type="submit" value="Salvar">Produtos</button>
+            </a>
+            <a><button class="btn btn-secondary btn-lg" type="submit" value="Salvar">Financeiro</button></a>
+            <a><button class="btn btn-secondary btn-lg" type="submit" value="Salvar">Relatórios</button></a>
+          </div>
+      </div>
+    </div>
+
+
+                
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
 </html>

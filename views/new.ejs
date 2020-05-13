@@ -1,18 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <form action="<%= action %>" method="POST">
-      <label>Nome Empresa:</label>
-        <input type="text" name="nome" value="<%= dados.nome %>" />
-      <label>Número</label>
-        <input type="number" name="numero" value="<%= dados.numero %>" />
-      <button type="submit" value="Salvar">Salvar</button>
-      <button type="submit" value="deletee">Deletar</button>
-    </form>
-  </body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include(nav) %>
+
+
+        <div class="container">
+
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto">
+
+                    <h2>
+                        <%= title %>
+                    </h2>
+                </div>
+            </div>
+            <div class="table-dark justify-content-md-center">
+                <div class="col-md-auto">
+                    <form action="<%= action %>" method="POST">
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="validationServer01">Nome:</label>
+                                <input placeholder="Descrição" name="descricao" value="<%= dados.descricao %>" type="text" class="form-control is-valid">
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationServer02">Código Barras:</label>
+                                <input type="text" name="volume" value="<%= dados.volume %>" class="form-control is-valid" placeholder="Volume" />
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationServerUsername">Valor:</label>
+                                <input type="number" name="preco" value="<%= dados.preco %>" class="form-control is-valid" placeholder="Preço" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="validationServer03">Número:</label>
+                                <input type="number" name="id" value="<%= dados.id %>" class="form-control is-valid" placeholder="ID" />
+
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="validationServer04">Quantidade:</label>
+                                <input type="number" name="quantidade" value="<%= dados.quantidade %>" class="form-control is-valid" placeholder="Quantidade" />
+
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit" value="Salvar">Salvar Cadastro</button>
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
 </html>
